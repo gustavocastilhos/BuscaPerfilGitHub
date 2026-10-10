@@ -1,0 +1,11 @@
+/* Fundo escuro com gradiente azul suave para simular o design */
+body {
+    background:
+        radial-gradient(circle at top right, #0a2463, transparent 40%),
+        radial-gradient(circle at bottom left, #0a2463, transparent 40%),
+        #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

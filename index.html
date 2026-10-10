@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil GitHub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-white antialiased p-4">
+
+    <!-- Container Principal (Estado 1 do Figma) -->
+    <main class="bg-black w-full max-w-2xl rounded-2xl shadow-2xl p-8 flex flex-col items-center border border-gray-800">
+        
+        <!-- Logo e Título -->
+        <div class="flex items-center gap-3 mb-8">
+            <i class="fa-brands fa-github text-4xl"></i>
+            <h1 class="text-3xl font-normal">Perfil <span class="font-bold">GitHub</span></h1>
+        </div>
+
+        <!-- Campo de Busca -->
+        <div class="flex w-full max-w-md mb-8 shadow-lg">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Digite um usuário do Github" 
+                class="flex-1 py-3 px-4 text-gray-900 bg-white rounded-l-md focus:outline-none"
+            >
+            <button 
+                id="searchBtn" 
+                class="bg-blue-600 hover:bg-blue-700 transition-colors px-6 text-white rounded-r-md flex items-center justify-center"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- Estado de Loading (Opcional) -->
+        <div id="loadingState" class="hidden flex-col items-center gap-2 mb-4">
+            <i class="fa-solid fa-circle-notch fa-spin text-blue-500 text-3xl"></i>
+            <p class="text-sm text-gray-400">Buscando perfil...</p>
+        </div>
+
+        <!-- Container de Resultado (Estado 2 do Figma) -->
+        <div id="resultContainer" class="hidden w-full max-w-lg bg-[#e2e2e2] rounded-2xl p-6 flex items-center gap-6 text-gray-900 shadow-inner">
+            <img id="userAvatar" src="" alt="Foto de perfil" class="w-24 h-24 rounded-full border-2 border-blue-500 shadow-md object-cover">
+            <div class="flex flex-col">
+                <h2 id="userName" class="text-blue-600 font-bold text-xl mb-1"></h2>
+                <p id="userBio" class="text-sm text-gray-700 leading-relaxed"></p>
+            </div>
+        </div>
+
+        <!-- Container de Erro (Estado 3 do Figma) -->
+        <div id="errorContainer" class="hidden w-full max-w-lg bg-[#e2e2e2] rounded-2xl p-6 text-center shadow-inner">
+            <p class="text-red-500 text-sm font-medium">
+                Nenhum perfil foi encontrado com esse nome de usuário.<br>Tente novamente
+            </p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
